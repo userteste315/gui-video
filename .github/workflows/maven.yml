@@ -61,7 +61,7 @@ jobs:
           tags: latest
           registry: docker.io
           dockerfile: Dockerfile
-          username: userteste315
-          password: userteste123
+          username: userteste123
+          password: userteste315
 
 
