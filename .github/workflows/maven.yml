@@ -57,12 +57,12 @@ jobs:
       - name: Build and Push docker image
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: userteste315/gui-video2
+          image: userteste315/gui-video2  # nome do usuario + nome do repositorio desejado no docker hub
           tags: latest
           registry: docker.io
           dockerfile: Dockerfile
-          username: userteste315
-          password: userteste123
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD2 }}
 
   deploy:
     needs: docker_build_and_push
