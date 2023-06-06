@@ -64,4 +64,10 @@ jobs:
           username: userteste315
           password: userteste123
 
+  deploy:
+    needs: docker_build_and_push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update Deploy
+        run: curl ${{ secrets.RENDER_HOOK_GUI_VIDEO }}
 

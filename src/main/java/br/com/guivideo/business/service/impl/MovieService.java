@@ -7,6 +7,8 @@ import br.com.guivideo.infrastructure.repository.MovieRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MovieService implements IMovieService {
     private final MovieRepository movieRepository;
@@ -21,6 +23,11 @@ public class MovieService implements IMovieService {
         Movie newMovie = new Movie(title);
         movieRepository.save(newMovie);
         return modelMapper.map(newMovie, MovieResponse.class);
+    }
+
+    @Override
+    public List<Movie> findAll() {
+        return movieRepository.findAll();
     }
 
 }
