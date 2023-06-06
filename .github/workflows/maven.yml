@@ -24,6 +24,9 @@ jobs:
       run: mvn compile
 
   testar_projeto:
+    runs-on: ubuntu-latest
+
+    steps:
     - name: Github chckout
       uses: actions/checkout@v3
     - name: Set up JDK 17
